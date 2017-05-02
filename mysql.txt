@@ -1,0 +1,24 @@
+数据库的锁机制是为了处理事务的并发问题。并发控制一般采用三种方法：乐观锁，悲观锁，时间戳。所谓悲观锁就是当读取数据时，不让别人修改这个数据，一直到读取完成后。而乐观锁就是不加控制。时间戳就是通过时间的先后顺序来处理并发。
+
+
+laravel的架构采用了控制反转的思想，控制反转有两种类型，依赖注入和依赖查找。
+依赖注入是一种设计方法。是面向接口编程，解决层之间的依赖性。也就是在构造函数中传入依赖类的实例
+
+
+php有很多优秀的特性，比如惰性加载。通常在一个php需要引入另一个类文件时，使用require或include,然后再实例化。然而当需要的类很多时，引入的文件就会很臃肿，加载的类也会很多，影响php的性能。而惰性加载使用__autoload()或 spl_autoload_register()来实现实例化某某类时自动加载这个类，这样就实现了动态加载，不用一次性加载所有的类。
+
+
+php的htmlentities和htmlspecialchars可以防止跨站脚本攻击，原理就是将特殊字符转化为html实体，比如<,浏览器会将它误认为是标签，如果再由其他字符混合起来很容易污染html页面。防止xss应在输出的时候进行而不是输入的时候进行，也就是类似echo,print_r之类。
+
+在防止sql注入方面，使用PDO::quote()或addslash()，一般addslashes用于单字符比较好。这些函数主要是用来转义一些特殊字符如单引号，双引号之类来防止注入，与预防xss不同，预防sql注入要在输入时过滤,也就是将post,get,cookie里的内容转义。
+
+php版本
+
+set utf8 http://php.net/manual/zh/mysqlinfo.concepts.charset.php
+
+http://blog.csdn.net/u012543061/article/details/52488871
+
+$ git remote add origin git@github.com:antievil/exercise.git
+
+
+
