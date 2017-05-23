@@ -1,0 +1,34 @@
+
+<?php
+   $m1=array(
+   array(1,2,3),
+   array(1,3,2)
+   );
+   $m2=array(
+   array(3,4),
+   array(3,4),
+   array(3,4));
+
+   $m3=array(
+   array(0,0),
+   array(0,0),
+
+
+   );
+
+
+   $row=count($m1);
+   $col=count($m2);
+
+   
+
+   for($i=0;$i<$row;$i++){
+    for($j=0;$j<$row;$j++){
+   	  for($z=0;$z<$col;$z++){
+   		$m3[$i][$j]+=$m1[$i][$z]*$m2[$z][$j];
+   	  }
+  	
+   }
+   }
+    echo "<pre>";
+   print_r($m3);
